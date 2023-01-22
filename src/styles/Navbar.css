@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(0, 0%, 100%);
+  padding: 1rem 4rem;
+  margin: auto;
+  box-shadow: 3px 10px 13px -2px rgba(0, 0, 0, 0.11);
+}
+
+.dark {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.moon svg {
+  font-size: 15px;
+}
