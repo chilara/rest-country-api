@@ -34,12 +34,14 @@
 }
 
 .myCards {
-  width: 250px;
+  width: 22%;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 90px;
 }
 
 .countryCards {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }

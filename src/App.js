@@ -5,21 +5,20 @@ import CountryContainer from "./components/CountryContainer";
 import { CircularProgress } from "@mui/material";
 
 function App() {
-  const [apiResponse, setApiResponse] = useState(null);
+  const [apiResponse, setApiResponse] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    const base = "https://restcountries.com/v3.1/all";
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await Axios.get("https://restcountries.com/v3.1/all");
-        console.log(response.data);
-        // setLoading(false);
+        const response = await Axios.get(`${base}`);
+        setApiResponse(response.data);
       } catch (error) {
-        alert("an error occurred");
-        // setLoading(false);
+        alert("an error occurred/modal");
       } finally {
-        // setLoading(false);
+        setLoading(false);
       }
     };
     fetchData();
@@ -39,7 +38,7 @@ function App() {
         </div>
       ) : (
         <div className="App">
-          <CountryContainer />
+          <CountryContainer responseData={apiResponse} />
         </div>
       )}
     </>
@@ -47,3 +46,23 @@ function App() {
 }
 
 export default App;
+
+// const list = [];
+// list.map(item =>  (
+//   <div>
+//     {/* -------------------flag of country ------------------------*/}
+//     <img src={item.flags.png} />
+
+//     {/* -------------Name of country ----------------- */}
+//     <p>{item.name.common}</p>
+
+//     {/* --------------- region of country ------------------ */}
+//     <p>{item.region}</p>
+
+//     {/*----------------- Population of country -------------- */}
+//     <p>{Number(item.population).toLocaleString()}</p>
+
+//     {/* --------------- capital of country ------------------ */}
+//     <p>{item.capital.map(item_ => (<span>{item_}</span>))}</p>
+//   </div>
+// ))

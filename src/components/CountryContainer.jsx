@@ -4,7 +4,8 @@ import MyAutocomplete from "./MyAutoComplete";
 import FilterByRegion from "./FilterByRegion";
 import MyCards from "./MyCards";
 
-const CountryContainer = () => {
+const CountryContainer = ({ responseData }) => {
+  console.log(responseData);
   return (
     <div>
       <NavBar></NavBar>
@@ -13,24 +14,16 @@ const CountryContainer = () => {
         <FilterByRegion />
       </div>
       <div className="countryCards">
-        {/* {listOfCountry} */}
-        <MyCards />
-        <MyCards />
-        <MyCards />
-        <MyCards />
+        {responseData.map((items) => (
+          <MyCards
+            image={items.flags.png}
+            country={items.name.common}
+            population={Number(items.population).toLocaleString}
+            region={items.region}
+            // capital={items && items.capital.map((item) => <span>{item}</span>)}
+          />
+        ))}
       </div>
-      <br />
-      <br />
-      <br />
-      <div className="countryCards">
-        <MyCards />
-        <MyCards />
-        <MyCards />
-        <MyCards />
-      </div>
-      <br />
-      <br />
-      <br />
     </div>
   );
 };
