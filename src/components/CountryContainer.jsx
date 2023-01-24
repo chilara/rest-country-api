@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import MyAutocomplete from "./MyAutoComplete";
 import FilterByRegion from "./FilterByRegion";
 import MyCards from "./MyCards";
+import MyPagination from "./MyPagination";
 
 const CountryContainer = ({ responseData }) => {
   console.log(responseData);
@@ -18,12 +19,13 @@ const CountryContainer = ({ responseData }) => {
           <MyCards
             image={items.flags.png}
             country={items.name.common}
-            population={Number(items.population).toLocaleString}
+            population={Number(items.population).toLocaleString()}
             region={items.region}
             // capital={items && items.capital.map((item) => <span>{item}</span>)}
           />
         ))}
       </div>
+      <MyPagination />
     </div>
   );
 };

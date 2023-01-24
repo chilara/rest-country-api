@@ -24,7 +24,7 @@ function App() {
     fetchData();
   }, []);
   return (
-    <>
+    <div>
       {loading ? (
         <div
           style={{
@@ -41,28 +41,8 @@ function App() {
           <CountryContainer responseData={apiResponse} />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
 export default App;
-
-// const list = [];
-// list.map(item =>  (
-//   <div>
-//     {/* -------------------flag of country ------------------------*/}
-//     <img src={item.flags.png} />
-
-//     {/* -------------Name of country ----------------- */}
-//     <p>{item.name.common}</p>
-
-//     {/* --------------- region of country ------------------ */}
-//     <p>{item.region}</p>
-
-//     {/*----------------- Population of country -------------- */}
-//     <p>{Number(item.population).toLocaleString()}</p>
-
-//     {/* --------------- capital of country ------------------ */}
-//     <p>{item.capital.map(item_ => (<span>{item_}</span>))}</p>
-//   </div>
-// ))
