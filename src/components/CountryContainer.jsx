@@ -21,7 +21,7 @@ const CountryContainer = ({ responseData }) => {
             country={items.name.common}
             population={Number(items.population).toLocaleString()}
             region={items.region}
-            // capital={items && items.capital.map((item) => <span>{item}</span>)}
+            capital={items.capital}
           />
         ))}
       </div>

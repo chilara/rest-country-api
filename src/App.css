@@ -40,6 +40,12 @@
   margin-bottom: 90px;
   margin-left: 45px;
   margin-right: 45px;
+  transition: transform ease-in 100ms;
+  cursor: pointer;
+}
+
+.myCards:hover {
+  transform: scale(1.06);
 }
 
 .countryCards {

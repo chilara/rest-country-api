@@ -9,14 +9,14 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const base = "https://restcountries.com/v3.1/all";
+    const base = "https://restcountries.com/v2/all";
     const fetchData = async () => {
       try {
         setLoading(true);
         const response = await Axios.get(`${base}`);
         setApiResponse(response.data);
       } catch (error) {
-        alert("an error occurred/modal");
+        alert("an error occurred");
       } finally {
         setLoading(false);
       }
