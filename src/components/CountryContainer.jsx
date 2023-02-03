@@ -18,7 +18,7 @@ const CountryContainer = ({ responseData }) => {
         {responseData.map((items) => (
           <MyCards
             image={items.flags.png}
-            country={items.name.common}
+            country={items.name}
             population={Number(items.population).toLocaleString()}
             region={items.region}
             capital={items.capital}
